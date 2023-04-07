@@ -1,2 +1,3 @@
 # TanzuTrends
-Get Tanzu Trends fro SOME
+
+End goal, is a TAP application, that can grab trends about Tnzu topics, and display them.
