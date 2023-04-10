@@ -33,7 +33,7 @@ func main() {
 
 	scraper := twitterscraper.New()
 	//scraper = scraper.SetSearchMode(twitterscraper.SearchLatest)
-	scraper = scraper.WithDelay(5)
+	//scraper = scraper.WithDelay(5)
 
 	for {
 		for tweet := range scraper.SearchTweets(context.Background(),

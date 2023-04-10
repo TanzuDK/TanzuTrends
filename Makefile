@@ -7,3 +7,8 @@ stop:
 clean:
 	docker compose down
 	docker volume rm tanzutrends_db 
+
+build: 
+	docker compose build
+	docker compose up -d --force-recreate
+	

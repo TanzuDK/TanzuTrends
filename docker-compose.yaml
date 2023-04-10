@@ -18,5 +18,16 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./app.env
+  frontend:
+    container_name: frontend
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file:
+      - ./app.env
 volumes:
   db:
