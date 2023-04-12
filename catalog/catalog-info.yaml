@@ -24,6 +24,8 @@ kind: System
 metadata:
   name: tanzutrends
   description: Tanzu Trends Demo Application
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   owner: denmark-team
   domain: tap-gui-domain
