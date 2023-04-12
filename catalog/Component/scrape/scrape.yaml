@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: scrape
+  description: The scraper for the Tanzu Trends Demo Application
+  tags:
+    - golang
+  links:
+    - url: https://golang-demo.default.vmlab.tanzu.dk/
+      title: App Link
+      icon: dashboard
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=tanzutrends
+spec:
+  type: service
+  lifecycle: experimental
+  owner: denmark-team
+  system: tanzutrends

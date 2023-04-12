@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: frontend
+  description: The frontend for the Tanzu Trends Demo Application
+  tags:
+    - python
+    - web
+  links:
+    - url: https://golang-demo.default.vmlab.tanzu.dk/
+      title: App Link
+      icon: dashboard
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=tanzutrends
+spec:
+  type: service
+  lifecycle: experimental
+  owner: denmark-team
+  system: tanzutrends

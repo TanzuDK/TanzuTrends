@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: tanzutrends
+  description: Tanzu Trends Demo Application
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  owner: denmark-team
+  domain: tap-gui-domain
