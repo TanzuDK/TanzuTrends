@@ -1,6 +1,7 @@
 name: Publish TechDocs for frontend
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     # You can even set it to run only when TechDocs related files are updated.
