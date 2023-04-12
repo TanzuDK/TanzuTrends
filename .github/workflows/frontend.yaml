@@ -6,8 +6,8 @@ on:
     branches: [main]
     # You can even set it to run only when TechDocs related files are updated.
     paths:
-      - "frontend/docs/**"
-      - "frontend/mkdocs.yml"
+      - "docs/**"
+      - "mkdocs.yml"
 
 jobs:
   publish-techdocs-site:
