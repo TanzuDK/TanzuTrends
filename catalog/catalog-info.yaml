@@ -9,5 +9,4 @@ spec:
   targets:
     - ./Component/frontend/frontend.yaml
     - ./Component/scrape/scrape.yaml
-    - ./groups/org.yaml
     - ./systems/tanzutrends.yaml
