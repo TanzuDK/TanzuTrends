@@ -4,7 +4,7 @@ metadata:
   name: frontend
   description: The frontend for the Tanzu Trends Demo Application
   tags:
-    - Python
+    - python
     - web
   links:
     - url: https://golang-demo.default.vmlab.tanzu.dk/
