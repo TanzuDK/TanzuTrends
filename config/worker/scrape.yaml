@@ -1,9 +1,9 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: frontend
+  name: scrape
   labels:
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: worker
     app.kubernetes.io/part-of: tanzutrends
     apps.tanzu.vmware.com/has-tests: "true"
   annotations:
@@ -14,4 +14,4 @@ spec:
       url: https://github.com/TanzuDK/TanzuTrends.git
       ref:
         branch: main
-    subPath: frontend
+    subPath: scrape
