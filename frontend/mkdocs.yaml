@@ -1,0 +1,6 @@
+site_name: Frontend for Tanzu Trends
+nav:
+  - The Application: index.md
+  - Links: links.md
+plugins:
+  - techdocs-core
