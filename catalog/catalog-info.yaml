@@ -12,7 +12,6 @@ metadata:
       icon: dashboard
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=tanzutrends
-    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   lifecycle: experimental

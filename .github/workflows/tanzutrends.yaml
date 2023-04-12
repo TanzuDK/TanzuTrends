@@ -1,4 +1,4 @@
-name: Publish TechDocs for frontend
+name: Publish TechDocs for TanzuTrends
 
 on:
   workflow_dispatch:
@@ -21,8 +21,8 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
       ENTITY_NAMESPACE: "default"
-      ENTITY_KIND: "Component"
-      ENTITY_NAME: "frontend"
+      ENTITY_KIND: "System"
+      ENTITY_NAME: "tanzutrends"
       # In a Software template, Scaffolder will replace {{cookiecutter.component_id | jsonify}}
       # with the correct entity name. This is same as metadata.name in the entity's catalog-info.yaml
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
