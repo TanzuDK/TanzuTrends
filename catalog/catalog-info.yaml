@@ -22,7 +22,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: scrape
-  description: The frontend for the Tanzu Trends Demo Application
+  description: The scraper for the Tanzu Trends Demo Application
   tags:
     - golang
   links:
