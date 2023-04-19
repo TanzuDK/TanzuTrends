@@ -15,11 +15,15 @@ import (
 
 func main() {
 	// Get the PostgreSQL database connection parameters from environment variables
-	user := os.Getenv("POSTGRES_USER")
-	password := os.Getenv("POSTGRES_PASSWORD")
-	dbname := os.Getenv("POSTGRES_DB")
-	host := os.Getenv("POSTGRES_HOST")
-	port := os.Getenv("POSTGRES_PORT")
+	user := os.Getenv("username")
+	password := os.Getenv("password")
+	dbname := os.Getenv("dbname")
+	host := os.Getenv("instancename")
+	port := os.Getenv("port")
+
+	if port == "" {
+		port = "5432"
+	}
 
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"

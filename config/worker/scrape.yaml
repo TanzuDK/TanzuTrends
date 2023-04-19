@@ -8,13 +8,14 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
   annotations:
     autoscaling.knative.dev/minScale: "1"
+    env-secret: tanzutrends-db-db-secret
 spec:
   serviceClaims:
     - name: db
       ref:
-        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-        kind: ResourceClaim
-        name: tanzutrends
+        apiVersion: sql.tanzu.vmware.com/v1
+        kind: Postgres
+        name: account-db
   source:
     git:
       url: https://github.com/TanzuDK/TanzuTrends.git
