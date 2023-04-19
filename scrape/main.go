@@ -38,13 +38,16 @@ func main() {
 
 	// Print file
 	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
-	if err != nil {
-		log.Fatal(err)
-	}
+	fmt.Println(content)
+	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/password")
+	fmt.Println(content)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
 	// Convert []byte to string and print to screen
-	text := string(content)
-	fmt.Println(text)
+	//text := string(content)
+	//fmt.Println(text)
 
 	// Servicebindings
 	//os.Setenv("serviceBindingRoot", "/bindings/")
