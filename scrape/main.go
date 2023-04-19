@@ -89,7 +89,9 @@ func main() {
 			fmt.Println("hashtags 	: " + hashtags)
 
 			if err != nil {
-				log.Println("Error inserting tweet into the database: %v", err)
+				log.Println("!!!")
+				log.Println("!!! Error inserting tweet into the database: %v", err)
+				log.Println("!!!")
 
 			}
 			fmt.Println(tweet.Text)
