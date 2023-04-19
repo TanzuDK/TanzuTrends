@@ -34,15 +34,13 @@ func main() {
 	for _, e := range entries {
 		fmt.Println(e.Name())
 	}
-	file, err := os.Open("/bindings/tanzutrends-db/dbname")
-	if err != nil {
-		log.Fatal(err)
-	}
 
-	fmt.Print(file)
+	// Servicebindings
+	os.Setenv("serviceBindingRoot", "/bindings/tanzutrends-db")
 
-	// Log env variables of rtrubleshooting purpose
-	fmt.Println(os.Environ())
+	sb, err := NewServiceBinding()
+	bindings, err := sb.AllBindings()
+	fmt.Println(bindings)
 
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
