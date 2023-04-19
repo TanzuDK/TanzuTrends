@@ -8,9 +8,13 @@ metadata:
     apps.tanzu.vmware.com/has-tests: "true"
   annotations:
     autoscaling.knative.dev/minScale: "1"
-    env-secret: tanzutrends-db-db-secret
 spec:
   serviceClaims:
+    - name: db-secret
+      ref:
+        apiVersion: v1
+        kind: Secret
+        name: tanzutrends-db-db-secret
     - name: db
       ref:
         apiVersion: sql.tanzu.vmware.com/v1
