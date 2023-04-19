@@ -27,7 +27,7 @@ func main() {
 	}
 
 	// List secret binding
-	entries, err := os.ReadDir("/bindings")
+	entries, err := os.ReadDir("/bindings/tanzutrends-db")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -37,7 +37,7 @@ func main() {
 	}
 
 	// Servicebindings
-	os.Setenv("serviceBindingRoot", "/bindings/tanzutrends-db")
+	os.Setenv("serviceBindingRoot", "/bindings")
 
 	sb, err := binding.NewServiceBinding()
 	bindings, err := sb.AllBindings()
