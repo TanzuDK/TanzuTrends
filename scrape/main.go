@@ -40,14 +40,14 @@ func main() {
 	}
 
 	// List secret binding
-	entries, err := os.ReadDir("/bindings/tanzutrends-db")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	for _, e := range entries {
-		fmt.Println(e.Name())
-	}
+	//entries, err := os.ReadDir("/bindings/tanzutrends-db")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//
+	//for _, e := range entries {
+	//	fmt.Println(e.Name())
+	//}
 
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
@@ -71,13 +71,14 @@ func main() {
 
 	for {
 		for tweet := range scraper.SearchTweets(context.Background(),
-			"#tanzu OR #vmware OR #tanzuvanguard -filter:retweets", 500) {
+			"#tanzu OR #vmware OR #tanzuvanguard OR #tmc -filter:retweets", 500) {
 			if tweet.Error != nil {
 				panic(tweet.Error)
 			}
 
 			// Join the hashtag slice into a single comma-separated string
 			hashtags := strings.Join(tweet.Hashtags, ",")
+			fmt.Println("Hashtag variable :" + hashtags)
 
 			// Insert the data into the database
 			_, err = db.Exec("INSERT INTO "+dbname+" (id, time, username, text, hashtags) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (id) DO NOTHING", tweet.ID, tweet.TimeParsed, tweet.Username, tweet.Text, hashtags)
