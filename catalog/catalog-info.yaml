@@ -10,3 +10,4 @@ spec:
     - ./Component/frontend/frontend.yaml
     - ./Component/scrape/scrape.yaml
     - ./systems/tanzutrends.yaml
+    - ./resource/db.yaml

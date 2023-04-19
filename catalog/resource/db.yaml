@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tanzutrends-db
+  description: DB for TanzuTrends data
+spec:
+  type: database
+  owner: denmark-team
+  system: tanzutrends
