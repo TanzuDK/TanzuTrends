@@ -60,7 +60,7 @@ func main() {
 	defer db.Close()
 
 	// Create Database
-	_, err = db.Exec("CREATE TABLE IF NOT EXISTS trends(id serial PRIMARY KEY, create_dtm VARCHAR, order_id VARCHAR, phone VARCHAR, name VARCHAR,	address VARCHAR, menu VARCHAR, total_item VARCHAR, pay VARCHAR)")
+	_, err = db.Exec("CREATE TABLE IF NOT EXISTS trends(id serial PRIMARY KEY, create_dtm VARCHAR, order_id VARCHAR, phone VARCHAR, name VARCHAR, address VARCHAR, menu VARCHAR, total_item VARCHAR, pay VARCHAR)")
 	if err != nil {
 		log.Println("Database Already exist")
 	}
@@ -82,6 +82,12 @@ func main() {
 
 			// Insert the data into the database
 			_, err = db.Exec("INSERT INTO "+dbname+" (id, time, username, text, hashtags) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (id) DO NOTHING", tweet.ID, tweet.TimeParsed, tweet.Username, tweet.Text, hashtags)
+			fmt.Println("ID 		: " + tweet.ID)
+			fmt.Println("TimeParsed : " + tweet.TimeParsed)
+			fmt.Println("Username 	: " + tweet.Username)
+			fmt.Println("Text 		: " + tweet.Text)
+			fmt.Println("hashtags 	: " + hashtags)
+
 			if err != nil {
 				log.Println("Error inserting tweet into the database: %v", err)
 
