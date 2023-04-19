@@ -37,7 +37,7 @@ func main() {
 	}
 
 	// Servicebindings
-	os.Setenv("serviceBindingRoot", "/bindings")
+	os.Setenv("serviceBindingRoot", "/bindings/")
 
 	sb, err := binding.NewServiceBinding()
 	bindings, err := sb.AllBindings()
