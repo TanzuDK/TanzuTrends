@@ -18,3 +18,4 @@ spec:
   system: tanzutrends
   dependsOn:
     - resource:default/tanzutrends-db
+    - component:default/frontend
