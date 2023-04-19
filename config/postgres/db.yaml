@@ -30,7 +30,7 @@ spec:
                   - key: postgres-instance
                     operator: In
                     values:
-                      - account-db
+                      - tweets
               topologyKey: kubernetes.io/hostname
             weight: 100
   monitorStorageSize: 1G

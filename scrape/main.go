@@ -16,6 +16,14 @@ import (
 
 func main() {
 	// Get the PostgreSQL database connection parameters from environment variables
+	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/username")
+	user := string(content)
+	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password")
+	password := string(content)
+	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/instancename")
+	host := string(content)
+	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
+	dbname := string(content)
 	//user := os.Getenv("username")
 	//password := os.Getenv("password")
 	//dbname := os.Getenv("dbname")
@@ -36,38 +44,6 @@ func main() {
 		fmt.Println(e.Name())
 	}
 
-	// Print file
-	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/username")
-	user := string(content)
-	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password")
-	password := string(content)
-	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/instancename")
-	host := string(content)
-	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
-	dbname := string(content)
-	//password = string(content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password"))
-	//dbname = string(content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname"))
-	//host = string(content, err = ioutil.ReadFile("/bindings/tanzutrends-db/instancename"))
-
-	//text = string(content)
-	//fmt.Println(text)
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-
-	// Convert []byte to string and print to screen
-	//text := string(content)
-	//fmt.Println(text)
-
-	// Servicebindings
-	//os.Setenv("serviceBindingRoot", "/bindings/")
-
-	//sb, err := binding.NewServiceBinding()
-	//bindings, err := sb.AllBindings()
-	//fmt.Println(bindings)
-
-	//fmt.Println(sb.Bindings("username"))
-
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
 
@@ -77,6 +53,12 @@ func main() {
 		log.Fatalf("Error connecting to the database: %v", err)
 	}
 	defer db.Close()
+
+	// Create Database
+	_, err = db.Exec("CREATE DATABASE tweets")
+	if err != nil {
+		panic(err)
+	}
 
 	scraper := twitterscraper.New()
 	//scraper = scraper.SetSearchMode(twitterscraper.SearchLatest)
