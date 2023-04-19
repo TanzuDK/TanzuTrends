@@ -9,6 +9,12 @@ metadata:
   annotations:
     autoscaling.knative.dev/minScale: "1"
 spec:
+  serviceClaims:
+    - name: tanzutrends-db
+      ref:
+        apiVersion: v1
+        kind: Secret
+        name: tanzutrends-db-db-secret
   source:
     git:
       url: https://github.com/TanzuDK/TanzuTrends.git
