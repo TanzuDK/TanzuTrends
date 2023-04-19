@@ -24,6 +24,11 @@ func main() {
 	host := string(content)
 	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
 	dbname := string(content)
+
+	fmt.Println("Username : " + user)
+	fmt.Println("Password : " + password)
+	fmt.Println("Host : " + host)
+	fmt.Println("DB Name : " + dbname)
 	//user := os.Getenv("username")
 	//password := os.Getenv("password")
 	//dbname := os.Getenv("dbname")
