@@ -15,6 +15,16 @@ DB_NAME = os.environ.get('POSTGRES_DB')
 DB_USER = os.environ.get('POSTGRES_USER')
 DB_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
 
+with open("/bindings/tanzutrends-db/dbname") as f:
+    DB_NAME = f.read()
+with open("/bindings/tanzutrends-db/instancename") as f:
+    DB_HOST = f.read()
+with open("/bindings/tanzutrends-db/username") as f:
+    DB_USER = f.read()
+with open("/bindings/tanzutrends-db/password") as f:
+    DB_PASSWORD = f.read()
+
+
 if not all([DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD]):
     st.error('One or more required environment variables are missing.')
     st.stop()
