@@ -57,7 +57,7 @@ func main() {
 	// Create Database
 	_, err = db.Exec("CREATE DATABASE tweets")
 	if err != nil {
-		panic(err)
+		log.Println("Database Already exist")
 	}
 
 	scraper := twitterscraper.New()
