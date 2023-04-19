@@ -25,6 +25,13 @@ func main() {
 		port = "5432"
 	}
 
+	// Log env variables of rtrubleshooting purpose
+	log.Println(user)
+	log.Println(password)
+	log.Println(dbname)
+	log.Println(host)
+	log.Println(port)
+
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
 
