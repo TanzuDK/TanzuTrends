@@ -55,7 +55,7 @@ func main() {
 	// Connect to the PostgreSQL database
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
-		log.Println("Error connecting to the database: %v", err)
+		log.Fatalln("Error connecting to the database: %v", err)
 	}
 	defer db.Close()
 
@@ -88,9 +88,9 @@ func main() {
 			log.Println("hashtags 	: " + hashtags)
 
 			if err != nil {
-				log.Println("!!!")
-				log.Println("!!! Error inserting tweet into the database: %v", err)
-				log.Println("!!!")
+				log.Fatalln("!!!")
+				log.Fatalln("!!! Error inserting tweet into the database: %v", err)
+				log.Fatalln("!!!")
 
 			}
 
