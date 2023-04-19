@@ -16,10 +16,10 @@ import (
 
 func main() {
 	// Get the PostgreSQL database connection parameters from environment variables
-	user := os.Getenv("username")
-	password := os.Getenv("password")
-	dbname := os.Getenv("dbname")
-	host := os.Getenv("instancename")
+	//user := os.Getenv("username")
+	//password := os.Getenv("password")
+	//dbname := os.Getenv("dbname")
+	//host := os.Getenv("instancename")
 	port := os.Getenv("port")
 
 	if port == "" {
@@ -37,12 +37,20 @@ func main() {
 	}
 
 	// Print file
-	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
-	text := string(content)
-	fmt.Println(text)
+	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/username")
+	user := string(content)
 	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password")
-	text = string(content)
-	fmt.Println(text)
+	password := string(content)
+	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/instancename")
+	host := string(content)
+	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
+	dbname := string(content)
+	//password = string(content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password"))
+	//dbname = string(content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname"))
+	//host = string(content, err = ioutil.ReadFile("/bindings/tanzutrends-db/instancename"))
+
+	//text = string(content)
+	//fmt.Println(text)
 	//if err != nil {
 	//	log.Fatal(err)
 	//}
