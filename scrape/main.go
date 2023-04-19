@@ -61,7 +61,7 @@ func main() {
 
 	for {
 		for tweet := range scraper.SearchTweets(context.Background(),
-			"#tanzu OR #vmware OR #tanzuvanguard OR #tmc -filter:retweets", 500) {
+			"#tanzu OR #vmware OR #tanzuvanguard OR #tmc OR #tap OR #tkg -filter:retweets", 500) {
 			if tweet.Error != nil {
 				panic(tweet.Error)
 			}
