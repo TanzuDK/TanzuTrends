@@ -23,7 +23,8 @@ with open("/bindings/tanzutrends-db/username") as f:
     DB_USER = f.read()
 with open("/bindings/tanzutrends-db/password") as f:
     DB_PASSWORD = f.read()
-
+# Set port manual
+DB_PORT = 5432
 
 if not all([DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD]):
     st.error('One or more required environment variables are missing.')
