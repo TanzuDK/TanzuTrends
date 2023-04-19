@@ -93,5 +93,8 @@ for hashtag in selected_hashtags:
 
     charts.append(chart)
 
+st.header("Tanzu Trends")
+
+
 # Combine the charts into a single row
 st.altair_chart(alt.hconcat(*charts), use_container_width=True)
