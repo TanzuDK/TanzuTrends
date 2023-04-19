@@ -4,10 +4,10 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"strings"
-	"tanzutrends/binding"
 	"time"
 
 	_ "github.com/lib/pq"
@@ -36,14 +36,24 @@ func main() {
 		fmt.Println(e.Name())
 	}
 
+	// Print file
+	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Convert []byte to string and print to screen
+	text := string(content)
+	fmt.Println(text)
+
 	// Servicebindings
-	os.Setenv("serviceBindingRoot", "/bindings/")
+	//os.Setenv("serviceBindingRoot", "/bindings/")
 
-	sb, err := binding.NewServiceBinding()
-	bindings, err := sb.AllBindings()
-	fmt.Println(bindings)
+	//sb, err := binding.NewServiceBinding()
+	//bindings, err := sb.AllBindings()
+	//fmt.Println(bindings)
 
-	fmt.Println(sb.Bindings("username"))
+	//fmt.Println(sb.Bindings("username"))
 
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
