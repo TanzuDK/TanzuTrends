@@ -43,6 +43,8 @@ func main() {
 	bindings, err := sb.AllBindings()
 	fmt.Println(bindings)
 
+	fmt.Println(sb.Bindings("username"))
+
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
 
