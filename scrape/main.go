@@ -60,7 +60,7 @@ func main() {
 	defer db.Close()
 
 	// Create Database
-	_, err = db.Exec("CREATE TABLE IF NOT EXISTS trends(id serial PRIMARY KEY, create_dtm VARCHAR, order_id VARCHAR, phone VARCHAR, name VARCHAR, address VARCHAR, menu VARCHAR, total_item VARCHAR, pay VARCHAR)")
+	_, err = db.Exec("CREATE TABLE IF NOT EXISTS tweets (id BIGINT PRIMARY KEY,	time TEXT, username TEXT, text TEXT, hashtags TEXT)")
 	if err != nil {
 		log.Println("Database Already exist")
 	}
