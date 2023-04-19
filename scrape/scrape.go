@@ -34,6 +34,12 @@ func main() {
 	for _, e := range entries {
 		fmt.Println(e.Name())
 	}
+	file, err := os.Open("/bindings/tanzutrends-db/dbname")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Print(file)
 
 	// Log env variables of rtrubleshooting purpose
 	fmt.Println(os.Environ())
