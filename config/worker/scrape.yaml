@@ -10,16 +10,22 @@ metadata:
     autoscaling.knative.dev/minScale: "1"
 spec:
   serviceClaims:
-    - name: db-secret
+    - name: tanzutrends-db
       ref:
         apiVersion: v1
         kind: Secret
-        name: tanzutrends-db-db-secret
+        name: tanzutrends-db
     - name: db
       ref:
         apiVersion: sql.tanzu.vmware.com/v1
         kind: Postgres
         name: account-db
+  env:
+    - name: port
+      valueFrom:
+        secretKeyRef:
+          name: port
+          key: "9999"
   source:
     git:
       url: https://github.com/TanzuDK/TanzuTrends.git
