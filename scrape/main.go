@@ -78,14 +78,14 @@ func main() {
 
 			// Join the hashtag slice into a single comma-separated string
 			hashtags := strings.Join(tweet.Hashtags, ",")
-			fmt.Println("Hashtag variable :" + hashtags)
+			log.Println("Hashtag variable :" + hashtags)
 
 			// Insert the data into the database
 			_, err = db.Exec("INSERT INTO "+dbname+" (id, time, username, text, hashtags) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (id) DO NOTHING", tweet.ID, tweet.TimeParsed, tweet.Username, tweet.Text, hashtags)
-			fmt.Println("ID 		: " + tweet.ID)
-			fmt.Println("Username 	: " + tweet.Username)
-			fmt.Println("Text 		: " + tweet.Text)
-			fmt.Println("hashtags 	: " + hashtags)
+			log.Println("ID 		: " + tweet.ID)
+			log.Println("Username 	: " + tweet.Username)
+			log.Println("Text 		: " + tweet.Text)
+			log.Println("hashtags 	: " + hashtags)
 
 			if err != nil {
 				log.Println("!!!")
@@ -93,7 +93,6 @@ func main() {
 				log.Println("!!!")
 
 			}
-			fmt.Println(tweet.Text)
 
 		}
 		time.Sleep(60 * time.Minute)
