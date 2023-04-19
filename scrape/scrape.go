@@ -25,6 +25,16 @@ func main() {
 		port = "5432"
 	}
 
+	// List secret binding
+	entries, err := os.ReadDir("/bindings/tanzutrends-db")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, e := range entries {
+		fmt.Println(e.Name())
+	}
+
 	// Log env variables of rtrubleshooting purpose
 	fmt.Println(os.Environ())
 
