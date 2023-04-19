@@ -39,16 +39,6 @@ func main() {
 		port = "5432"
 	}
 
-	// List secret binding
-	//entries, err := os.ReadDir("/bindings/tanzutrends-db")
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-	//
-	//for _, e := range entries {
-	//	fmt.Println(e.Name())
-	//}
-
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
 
