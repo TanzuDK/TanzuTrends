@@ -27,7 +27,7 @@ func main() {
 	}
 
 	// List secret binding
-	entries, err := os.ReadDir("/bindings/tanzutrends-db")
+	entries, err := os.ReadDir("/bindings")
 	if err != nil {
 		log.Fatal(err)
 	}
