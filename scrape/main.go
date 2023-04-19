@@ -39,7 +39,7 @@ func main() {
 	// Print file
 	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
 	fmt.Println(content)
-	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/password")
+	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password")
 	fmt.Println(content)
 	//if err != nil {
 	//	log.Fatal(err)
