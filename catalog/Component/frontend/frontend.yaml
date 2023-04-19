@@ -18,4 +18,4 @@ spec:
   owner: denmark-team
   system: tanzutrends
   dependsOn:
-    - resource:default/scrape
+    - resource:default/tanzutrends-db

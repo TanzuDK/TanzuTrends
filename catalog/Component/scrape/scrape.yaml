@@ -17,4 +17,4 @@ spec:
   owner: denmark-team
   system: tanzutrends
   dependsOn:
-    - resource:default/frontend
+    - resource:default/tanzutrends-db
