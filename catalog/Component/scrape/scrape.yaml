@@ -16,3 +16,5 @@ spec:
   lifecycle: experimental
   owner: denmark-team
   system: tanzutrends
+  dependsOn:
+    - resource:default/frontend
