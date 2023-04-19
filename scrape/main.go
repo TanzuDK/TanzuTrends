@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"tanzutrends/binding"
 	"time"
 
 	_ "github.com/lib/pq"
@@ -38,7 +39,7 @@ func main() {
 	// Servicebindings
 	os.Setenv("serviceBindingRoot", "/bindings/tanzutrends-db")
 
-	sb, err := NewServiceBinding()
+	sb, err := binding.NewServiceBinding()
 	bindings, err := sb.AllBindings()
 	fmt.Println(bindings)
 
