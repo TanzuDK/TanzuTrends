@@ -55,7 +55,7 @@ func main() {
 	// Connect to the PostgreSQL database
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
-		log.Fatalf("Error connecting to the database: %v", err)
+		log.Println("Error connecting to the database: %v", err)
 	}
 	defer db.Close()
 
@@ -83,7 +83,7 @@ func main() {
 			// Insert the data into the database
 			_, err = db.Exec("INSERT INTO "+dbname+" (id, time, username, text, hashtags) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (id) DO NOTHING", tweet.ID, tweet.TimeParsed, tweet.Username, tweet.Text, hashtags)
 			if err != nil {
-				log.Fatalf("Error inserting tweet into the database: %v", err)
+				log.Println("Error inserting tweet into the database: %v", err)
 
 			}
 			fmt.Println(tweet.Text)
