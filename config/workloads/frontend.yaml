@@ -15,6 +15,15 @@ spec:
         apiVersion: v1
         kind: Secret
         name: tanzutrends-db-db-secret
+  params:
+    - name: annotations
+      value:
+        # Target 10 requests in-flight per pod.
+        autoscaling.knative.dev/target: "10"
+        # Disable scale to zero with a min scale of 2 for High Availability.
+        autoscaling.knative.dev/min-scale: "2"
+        # Limit scaling to 10 pods.
+        autoscaling.knative.dev/max-scale: "10"
   source:
     git:
       url: https://github.com/TanzuDK/TanzuTrends.git
