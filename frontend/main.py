@@ -10,9 +10,6 @@ import streamlit as st
 
 # Set up database connection
 
-# Set db manual
-DB_PORT = 5432
-
 # Get connection from env variables
 DB_HOST = os.environ.get('POSTGRES_HOST')
 DB_PORT = os.environ.get('POSTGRES_PORT')
@@ -30,7 +27,8 @@ if os.path.exists("/bindings/tanzutrends-db") == True:
         DB_USER = f.read()
     with open("/bindings/tanzutrends-db/password") as f:
         DB_PASSWORD = f.read()
-    
+    # Set db manual
+    DB_PORT = 5432
 
 
 
