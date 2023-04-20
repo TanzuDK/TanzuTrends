@@ -29,11 +29,21 @@ func main() {
 	dbname := string(content)
 
 	// Get the PostgreSQL database connection parameters from ENV Variables
-	user = os.Getenv("POSTGRES_USER")
-	password = os.Getenv("POSTGRES_PASSWORD")
-	dbname = os.Getenv("POSTGRES_DB")
-	host = os.Getenv("POSTGRES_HOST")
-	port = os.Getenv("POSTGRES_PORT")
+	if os.Getenv("POSTGRES_USER") != "" {
+		user = os.Getenv("POSTGRES_USER")
+	}
+	if os.Getenv("POSTGRES_PASSWORD") != "" {
+		password = os.Getenv("POSTGRES_PASSWORD")
+	}
+	if os.Getenv("POSTGRES_DB") != "" {
+		dbname = os.Getenv("POSTGRES_DB")
+	}
+	if os.Getenv("POSTGRES_HOST") != "" {
+		host = os.Getenv("POSTGRES_HOST")
+	}
+	if os.Getenv("POSTGRES_PORT") != "" {
+		port = os.Getenv("POSTGRES_PORT")
+	}
 
 	fmt.Println("Username : " + user)
 	fmt.Println("Password : " + password)
