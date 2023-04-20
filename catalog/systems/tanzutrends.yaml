@@ -5,6 +5,16 @@ metadata:
   description: Tanzu Trends Demo Application
   annotations:
     backstage.io/techdocs-ref: dir:.
+  tags:
+    - Twitter
+    - Trends
+  links:
+    - url: https://frontend.default.vmlab.tanzu.dk/
+      title: Internal App Link
+      icon: dashboard
+    - url: https://tanzutrends.tanzu.dk
+      title: External App Link
+      icon: dashboard
 spec:
   owner: denmark-team
   domain: tap-gui-domain
