@@ -13,7 +13,7 @@ metadata:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=tanzutrends
 spec:
   type: service
-  lifecycle: experimental
+  lifecycle: production
   owner: denmark-team
   system: tanzutrends
   dependsOn:
