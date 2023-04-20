@@ -15,7 +15,10 @@ import (
 )
 
 func main() {
-	// Get the PostgreSQL database connection parameters from environment variables
+	//Define port Staticly
+	port := "5432"
+
+	// Get the PostgreSQL database connection parameters from files
 	content, err := ioutil.ReadFile("/bindings/tanzutrends-db/username")
 	user := string(content)
 	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/password")
@@ -25,19 +28,17 @@ func main() {
 	content, err = ioutil.ReadFile("/bindings/tanzutrends-db/dbname")
 	dbname := string(content)
 
+	// Get the PostgreSQL database connection parameters from ENV Variables
+	user = os.Getenv("POSTGRES_USER")
+	password = os.Getenv("POSTGRES_PASSWORD")
+	dbname = os.Getenv("POSTGRES_DB")
+	host = os.Getenv("POSTGRES_HOST")
+	port = os.Getenv("POSTGRES_PORT")
+
 	fmt.Println("Username : " + user)
 	fmt.Println("Password : " + password)
 	fmt.Println("Host : " + host)
 	fmt.Println("DB Name : " + dbname)
-	//user := os.Getenv("username")
-	//password := os.Getenv("password")
-	//dbname := os.Getenv("dbname")
-	//host := os.Getenv("instancename")
-	port := os.Getenv("port")
-
-	if port == "" {
-		port = "5432"
-	}
 
 	// Construct the PostgreSQL database connection string
 	connStr := "postgres://" + user + ":" + password + "@" + host + ":" + port + "/" + dbname + "?sslmode=disable"
