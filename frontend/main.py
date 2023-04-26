@@ -99,6 +99,18 @@ for hashtag in selected_hashtags:
 
     charts.append(chart)
 
+# --- Display Elements ---
+st.set_page_config(
+    page_title="Tanzu Trends",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'TAP': 'https://tap-gui.vmlab.tanzu.dk/catalog/default/system/tanzutrends'
+    }
+)
+
+
 st.header("Tanzu Trends")
 st.subheader("See what's trending")
 
