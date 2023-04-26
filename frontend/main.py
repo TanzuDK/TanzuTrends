@@ -100,6 +100,7 @@ for hashtag in selected_hashtags:
     charts.append(chart)
 
 st.header("Tanzu Trends")
+st.subheader("See what's trending")
 
 
 # Combine the charts into a single row
