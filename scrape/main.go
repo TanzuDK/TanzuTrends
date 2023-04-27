@@ -69,8 +69,10 @@ func main() {
 	scraper := twitterscraper.New()
 	//scraper = scraper.SetSearchMode(twitterscraper.SearchLatest)
 	//scraper = scraper.WithDelay(5)
+	scraper.Login("tanzutrend1900", "7@3aQZiV8Sc#EX")
 
 	for {
+
 		for tweet := range scraper.SearchTweets(context.Background(),
 			"#tanzu OR #vmware OR #tanzuvanguard OR #tmc OR #tap OR #tkg -filter:retweets", 500) {
 			if tweet.Error != nil {
