@@ -3,6 +3,10 @@ kind: Resource
 metadata:
   name: tanzutrends-db
   description: DB for TanzuTrends data
+  links:
+    - url: https://docs.vmware.com/en/VMware-SQL-with-Postgres-for-Kubernetes/index.html
+      title: VMware Postgres operator documentation
+      icon: dashboard
 spec:
   type: database
   lifecycle: production
