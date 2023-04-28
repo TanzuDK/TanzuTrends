@@ -3,8 +3,6 @@ kind: Location
 metadata:
   name: tanzu-trends-info
   description: "Catalog for the 'Tanzu Trendsr' application"
-  annotations:
-    "backstage.io/techdocs-ref": dir:.
 spec:
   targets:
     - ./Component/frontend/frontend.yaml
