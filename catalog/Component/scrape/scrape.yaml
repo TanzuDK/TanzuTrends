@@ -6,8 +6,8 @@ metadata:
   tags:
     - golang
   links:
-    - url: https://golang-demo.default.vmlab.tanzu.dk/
-      title: App Link
+    - url: github.com/n0madic/twitter-scraper
+      title: Twitter Scraper Github Page
       icon: dashboard
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=tanzutrends
