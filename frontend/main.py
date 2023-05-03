@@ -114,7 +114,7 @@ for hashtag in selected_hashtags:
 
 
 st.header("Tanzu Trends")
-st.subheader("Hi DB See what's trending")
+st.subheader("Hi Nordea See what's trending")
 
 
 # Combine the charts into a single row
